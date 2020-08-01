@@ -46,7 +46,6 @@ class App extends Component {
             lastName={employee.name.last}
             email={employee.email}
             phone={employee.phone}
-            id={employee.id.value}
             src={employee.picture.large}
           />
         ))}
