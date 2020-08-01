@@ -16,6 +16,7 @@ const Title = () => {
           <p className="lead">
             Search or filter through the directory to see all employees.
           </p>
+          <p>I added this later.</p>
         </div>
       </div>
     </div>
