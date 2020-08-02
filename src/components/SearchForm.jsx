@@ -27,7 +27,7 @@ function SearchForm(props) {
           className="btn btn-success"
           onClick={props.sortByName}
         >
-          Sort By Name
+          Sort By Last Name
         </button>
       </div>
     </form>
