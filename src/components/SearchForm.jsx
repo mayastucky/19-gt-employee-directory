@@ -13,7 +13,6 @@ const styles = {
   },
 };
 
-// Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SearchForm(props) {
   return (
     <form className="search">
@@ -22,7 +21,7 @@ function SearchForm(props) {
         <input
           style={styles.inputStyle}
           value={props.search}
-          onChange={props.handleInputChange}
+          onChange={props.inputChanged}
           name="search"
           type="text"
           className="form-control"
