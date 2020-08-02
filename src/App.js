@@ -24,9 +24,19 @@ class App extends Component {
       .catch((err) => console.log(err));
   };
 
-  // handleInputChange = (event) => {
-  //   this.setState({ search: event.target.value });
-  // };
+  handleInputChange = (event) => {
+    this.setState({ search: event.target.value });
+  };
+
+  handleSortByName = () => {
+    const sortEl = this.state.users;
+    const sorted = sortEl.sort((a, b) =>
+      a.name.first > b.name.first ? 1 : -1
+    );
+    this.setState({
+      users: sorted,
+    });
+  };
 
   // handleSubmit = (event) => {
   //   event.preventDefault();
@@ -36,7 +46,10 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
-        <SearchForm />
+        <SearchForm
+          // onChange={this.handleInputChange}
+          sortByName={this.handleSortByName}
+        />
         {/* this renders the row and the information stored in the api JSON */}
         {/* we need to map over all the users and display their information in a table */}
         {this.state.users.map((employee) => (
@@ -46,6 +59,7 @@ class App extends Component {
             email={employee.email}
             phone={employee.phone}
             src={employee.picture.large}
+            // onClick={this.sortByName}
           />
         ))}
       </div>

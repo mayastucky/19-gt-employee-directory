@@ -7,14 +7,16 @@ const EmployeeRow = (props) => {
       text: "center",
     },
   };
-  
+
   return (
     <div className="container">
       <table class="table" style={styles.textStyle}>
         <thead>
           <tr>
             <th scope="col">ID Picture</th>
-            <th scope="col">Name</th>
+            <th scope="col">
+                {/* <button>Name</button> */} Name
+            </th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
           </tr>
