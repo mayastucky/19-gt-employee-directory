@@ -11,6 +11,7 @@ class App extends Component {
     search: "",
     users: [],
     results: [],
+    sorted: "ascending",
   };
 
   //like document.ready, this will load the page with a list of randomly generated people
@@ -30,12 +31,23 @@ class App extends Component {
 
   handleSortByName = () => {
     const sortEl = this.state.users;
-    const sorted = sortEl.sort((a, b) =>
-      a.name.first > b.name.first ? 1 : -1
-    );
-    this.setState({
-      users: sorted,
-    });
+    if (this.state.sorted === "ascending") {
+      const sorted = sortEl.sort((a, b) =>
+        a.name.last > b.name.last ? 1 : -1
+      );
+      this.setState({
+        users: sorted,
+        sorted: "descending",
+      });
+    } else {
+      const sorted = sortEl.sort((a, b) =>
+        a.name.last > b.name.last ? -1 : 1
+      );
+      this.setState({
+        users: sorted,
+        sorted: "ascending",
+      });
+    }
   };
 
   // handleSubmit = (event) => {
