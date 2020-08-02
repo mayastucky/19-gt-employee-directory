@@ -22,7 +22,12 @@ class App extends Component {
 
   generateEmployees = () => {
     API.getEmployees()
-      .then((response) => this.setState({ users: response.data.results }))
+      .then((response) =>
+        this.setState({
+          users: response.data.results,
+          searchedEmployees: response.data.results,
+        })
+      )
       .catch((err) => console.log(err));
   };
 
@@ -32,13 +37,13 @@ class App extends Component {
     const searchedEmployees = this.state.users.filter((employees) => {
       const { first: firstName, last: lastName } = employees.name;
       const searchedEmployeesName = `${firstName} ${lastName}`;
-      return searchedEmployeesName.toLowerCase().includes(
-        searchedName.toLowerCase().trim()
-      );
+      return searchedEmployeesName
+        .toLowerCase()
+        .includes(searchedName.toLowerCase().trim());
     });
     this.setState({
       searchedEmployees,
-      search: searchedName
+      search: searchedName,
     });
   };
 
