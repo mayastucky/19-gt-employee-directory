@@ -6,10 +6,11 @@ const styles = {
     border: "2px solid #AA9ABA",
     color: "black",
     marginTop: "5px",
+    marginRight: "60%"
   },
   inputStyle: {
     width: "50%",
-    marginLeft: "25%"
+    marginLeft: "25%",
   },
 };
 
@@ -17,7 +18,9 @@ function SearchForm(props) {
   return (
     <form className="search">
       <div className="form-group">
-        <label htmlFor="search">Search By Name</label>
+        <label htmlFor="search">
+          Start Typing a Name to see Matching Results{" "}
+        </label>
         <input
           style={styles.inputStyle}
           value={props.search}
@@ -27,14 +30,14 @@ function SearchForm(props) {
           className="form-control"
           id="search"
         />
-        <button
+        {/* <button
           style={styles.buttonsStyle}
           type="submit"
           className="btn btn-success"
           onSubmit={props.handleSubmit}
         >
           Search
-        </button>
+        </button> */}
         <br></br>
         <button
           type="button"
