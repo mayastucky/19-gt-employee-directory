@@ -10,7 +10,7 @@ const EmployeeRow = (props) => {
 
   return (
     <div className="container">
-      <table class="table" style={styles.textStyle}>
+      <table className="table" style={styles.textStyle}>
         <thead>
           <tr>
             <th scope="col">ID Picture</th>
