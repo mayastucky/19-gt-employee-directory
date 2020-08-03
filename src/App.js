@@ -9,7 +9,7 @@ class App extends Component {
   //this sets the state to an empty array of users
   state = {
     users: [],
-    results: [],
+    // results: [],
     sorted: "ascending",
     searchedEmployees: [],
     search: "",
@@ -42,7 +42,7 @@ class App extends Component {
         .includes(searchedName.toLowerCase().trim());
     });
     this.setState({
-      searchedEmployees,
+      searchedEmployees: searchedEmployees,
       search: searchedName,
     });
   };
@@ -83,7 +83,7 @@ class App extends Component {
         />
         {/* this renders the row and the information stored in the api JSON */}
         {/* we need to map over all the users and display their information in a table */}
-        {this.state.users.map((employee) => (
+        {this.state.searchedEmployees.map((employee) => (
           <EmployeeRow
             firstName={employee.name.first}
             lastName={employee.name.last}
