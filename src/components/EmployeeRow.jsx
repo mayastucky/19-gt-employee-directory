@@ -10,14 +10,6 @@ const EmployeeRow = (props) => {
   return (
     <div className="container">
       <table className="table" style={styles.textStyle}>
-        <thead>
-          <tr>
-            <th scope="col">ID Picture</th>
-            <th scope="col">{/* <button>Name</button> */} Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-          </tr>
-        </thead>
         <tbody>
           {/* we need a row with all the information of each employee */}
           <tr>
