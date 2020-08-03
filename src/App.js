@@ -77,16 +77,11 @@ class App extends Component {
     }
   };
 
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   this.setState({ search: event.target.value });
-  // };
   render() {
     return (
       <div className="App">
         <Title />
         <SearchForm
-          // onChange={this.handleInputChange}
           sortByName={this.handleSortByName}
           inputChanged={this.handleInputChange}
         />
@@ -100,7 +95,6 @@ class App extends Component {
             email={employee.email}
             phone={employee.phone}
             src={employee.picture.large}
-            // onClick={this.sortByName}
           />
         ))}
       </div>

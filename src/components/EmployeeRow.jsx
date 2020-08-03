@@ -1,7 +1,6 @@
 import React from "react";
 // here we pass in the props (like attributes from JS)
 const EmployeeRow = (props) => {
-
   const styles = {
     tableStyle: {
       text: "center",
@@ -14,9 +13,7 @@ const EmployeeRow = (props) => {
         <thead>
           <tr>
             <th scope="col">ID Picture</th>
-            <th scope="col">
-                {/* <button>Name</button> */} Name
-            </th>
+            <th scope="col">{/* <button>Name</button> */} Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
           </tr>

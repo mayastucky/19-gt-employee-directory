@@ -2,7 +2,7 @@ import React from "react";
 
 const styles = {
   myJumbotron: {
-    backgroundColor: "#AA9ABA",
+    backgroundColor: "#E39774",
     color: "white",
   },
 };
