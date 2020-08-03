@@ -4,6 +4,7 @@ import EmployeeRow from "./components/EmployeeRow";
 import API from "./utils/API";
 import SearchForm from "./components/SearchForm";
 import React, { Component } from "react";
+import TableHeading from "./components/TableHeading";
 
 class App extends Component {
   //this sets the state to an empty array of users, the sort order to "ascending" so we can change it via button click, the searchedEmployees
@@ -81,10 +82,12 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
+       
         <SearchForm
           sortByName={this.handleSortByName}
           inputChanged={this.handleInputChange}
         />
+         <TableHeading />
         {/* this renders the row and the information stored in the api JSON */}
         {/* we need to map over all the users and display their information in a table */}
         {this.state.searchedEmployees.map((employee) => (
