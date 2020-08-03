@@ -94,6 +94,7 @@ class App extends Component {
         {/* we need to map over all the users and display their information in a table */}
         {this.state.searchedEmployees.map((employee) => (
           <EmployeeRow
+            key={employee.login.uuid}
             firstName={employee.name.first}
             lastName={employee.name.last}
             email={employee.email}
