@@ -6,10 +6,10 @@ import SearchForm from "./components/SearchForm";
 import React, { Component } from "react";
 
 class App extends Component {
-  //this sets the state to an empty array of users
+  //this sets the state to an empty array of users, the sort order to "ascending" so we can change it via button click, the searchedEmployees
+  //array will change when the user types but is initially just the entire array of users, and the search just shows what the user has typed
   state = {
     users: [],
-    // results: [],
     sorted: "ascending",
     searchedEmployees: [],
     search: "",
@@ -20,6 +20,7 @@ class App extends Component {
     this.generateEmployees();
   }
 
+  //this gives us a list from API.js, then it sets the users and searchedEmployees states to the list from the API.
   generateEmployees = () => {
     API.getEmployees()
       .then((response) =>
@@ -33,36 +34,44 @@ class App extends Component {
 
   handleInputChange = (event) => {
     // this.setState({ search: event.target.value });
+    //variable of the searched name being = to whatever was typed in the input field
     const searchedName = event.target.value;
+    // this is setting the state of searchedEmployee = to a filtered list of employees.
     const searchedEmployees = this.state.users.filter((employees) => {
+      //we filter this list by deconstructing the name and setting it equal to employees.name
       const { first: firstName, last: lastName } = employees.name;
+      //then we return the employees name that includes the searchedName
       const searchedEmployeesName = `${firstName} ${lastName}`;
       return searchedEmployeesName
         .toLowerCase()
         .includes(searchedName.toLowerCase().trim());
     });
+    //then we alter the state for the searchedEmployee state to be equal to the filtered employees
     this.setState({
       searchedEmployees: searchedEmployees,
       search: searchedName,
     });
   };
 
+  //this funky code sorts the users last name alphabetically (from a-z and then from z-a) using the javascript .sort method
   handleSortByName = () => {
-    const sortEl = this.state.users;
+    const sortEl = this.state.searchedEmployees;
     if (this.state.sorted === "ascending") {
       const sorted = sortEl.sort((a, b) =>
         a.name.last > b.name.last ? 1 : -1
       );
+      //this sets the state of the searchedEmployees to the sorted list from a-z
       this.setState({
-        users: sorted,
+        searchedEmployees: sorted,
         sorted: "descending",
       });
     } else {
       const sorted = sortEl.sort((a, b) =>
         a.name.last > b.name.last ? -1 : 1
       );
+      //this sets the state of searchedEmployees to the sorted list from z-a
       this.setState({
-        users: sorted,
+        searchedEmployees: sorted,
         sorted: "ascending",
       });
     }
