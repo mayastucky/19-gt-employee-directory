@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Run `npm install` after cloning the repo. After everything has installed, run `npm start` and the application will render in your browser when loaded. 
 
+![Deployed App](app.png)
+
 ## Usage
 
 This application uses React and [Random User API](https://randomuser.me/) to generate a table of employees that can be sorted by last name and searched for. 

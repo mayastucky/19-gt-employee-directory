@@ -2,13 +2,14 @@ import React from "react";
 
 const styles = {
   buttonsStyle: {
-    backgroundColor: "pink",
+    backgroundColor: "#ACBED8",
     border: "2px solid #AA9ABA",
     color: "black",
     marginTop: "5px",
-    marginRight: "60%"
+    marginRight: "60%",
   },
   inputStyle: {
+    border: "2px solid #ACBED8",
     width: "50%",
     marginLeft: "25%",
   },
@@ -30,14 +31,6 @@ function SearchForm(props) {
           className="form-control"
           id="search"
         />
-        {/* <button
-          style={styles.buttonsStyle}
-          type="submit"
-          className="btn btn-success"
-          onSubmit={props.handleSubmit}
-        >
-          Search
-        </button> */}
         <br></br>
         <button
           type="button"
